@@ -7,13 +7,13 @@ title: 해쥬의 개발노트
 description: since September 25, 2021
 
 # Your name to show in the footer
-author: Haeju Lee, Anne
+author: Haeju Lee
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
+  CATEGORIES:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
   Author's home: "https://deanattali.com"
@@ -38,17 +38,17 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "someone@example.com"
-  facebook: deanattali
+  email: "heyjudelee98@gmail.com"
+# facebook: deanattali
   github: daattali
-  twitter: daattali
+#  twitter: daattali
   rss: true
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-#  instagram: deanat78
+  instagram: "https://www.instagram.com/had2_you/"
 #  youtube: user/deanat78
 #  spotify: yourname
 #  telephone: +14159998888
