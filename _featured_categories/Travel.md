@@ -12,6 +12,11 @@ slug: traveling
 description: >
   I've been to ...
 
+sidebar: true
+
+menu: true
+submenu: true
+order: 3
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
 
