@@ -12,6 +12,11 @@ slug: computer networak
 description: >
   2023-1 Computer Network at DKU lecturer in 이상범 교수님
 
+sidebar: true
+
+menu: true
+submenu: true
+order: 2
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
 
