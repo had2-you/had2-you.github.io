@@ -125,7 +125,7 @@ hide_description: true
 
 <div class="friends">
     <div><img src= "/assets/img/me/fren0.jpeg"></div>
-    <div><img src= "/assets/img/me/fren1.jpeg"></div>
+    <div><img src= "/assets/img/me/fren1.jpeg"></div>gi
 </div>
 
 <script type="text/javascript">
