@@ -1,8 +1,10 @@
 ---
 title: 'Summary'
 layout: post
-categories: Computer Network
-tags: cs
+categories:
+  - ComputerNetwork
+tags:
+  - cs
 comments: true
 ---
 

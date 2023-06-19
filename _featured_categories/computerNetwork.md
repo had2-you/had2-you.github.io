@@ -1,7 +1,7 @@
 ---
 layout: list
 bigtitle: Computer Network
-slug: Computer Network
+slug: ComputerNetwork
 menu: true
 submenu: false
 order: 2
