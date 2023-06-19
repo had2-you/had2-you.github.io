@@ -24,8 +24,6 @@ title: Haeju Lee
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description: >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
 tagline: iOS 앱개발 공부기록 그리고 여행 ﹒﹒﹒✈︎
@@ -54,7 +52,12 @@ menu:
     url: /ComputerNetwork/
   - title: Traveling
     url: /Travel/
-
+    # submenu:
+    #   - title:  Papers
+    #     url:      /papers/
+    #     submenu:
+    #     - title:  PointCloud
+    #       url:      /pointcloud/
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:

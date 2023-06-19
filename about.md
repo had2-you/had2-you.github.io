@@ -1,38 +1,63 @@
 ---
 layout: about
-title: About
-permalink: /about/
-more_posts: posts.md
-sidebar: true
-order: 1
+image: /assets/img/me.jpeg
+description: >
+hide_description: true
 ---
 
-# About
+# About Me
 
 <!--author-->
 
 ---
 
 <center>
-<span style=
-"font-size:170%;
-font-weight:bold">
-이해주
-</span>
+<span style="font-size:170%; font-weight:bold">이해주 | Anne</span>
 </center>
 
-<center>MAJOR : Software Development</center>
+<center>1998.03.31 Born in Republic of Korea 🇰🇷</center>
 
-<center>Dankook University</center>
+<center>자기소개</center>
 
-<center>152, Jukjeon-ro, Suji-gu, Yongin-si, Gyeonggi-do, Republic of Korea</center>
-
-## Personal Data
+## Contact
 
 ---
 
-> 1998.03.31 Born in Republic of Korea 🇰🇷
+> 📞 010-9379-3015
 
-> 연락처: heyjudelee98@gmail.com
+> 📧 heyjudelee98@gmail.com
 
-> Github : <a href="https://github.com/had2-you">https://github.com/had2-you</a>
+> 🐱 <a href="https://github.com/had2-you">https://github.com/had2-you</a>
+
+## Personal Project
+
+---
+
+**Dr.bot**
+
+- chatGPT 오픈소스를 활용한 의료용 챗봇 프로젝트 수행
+
+**구제 쇼핑몰 OP Shop**
+
+- 동묘 등 전국 각지의 구제시장들을 위한 의류 통합 플랫폼
+
+## Education
+
+---
+
+> ### 단국대학교
+>
+> Mar.2017 ~ Feb.2024(졸업예정)
+> 공과대학 소프트웨어학과(Software Development)
+>
+> ### 경기글로벌통상고등학교
+>
+> Mar.2014 ~ Feb.2017
+> IT컨텐츠학과
+
+## Skills and Certification
+
+---
+
+-Language : C/C++, Swift
+-Certification : Craftsman Information Processing
