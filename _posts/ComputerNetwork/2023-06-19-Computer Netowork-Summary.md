@@ -1,4 +1,4 @@
-![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/afd4c277-9fba-4f40-9f2c-e1499d00cdea)---
+---
 title: 'Summary'
 layout: post
 categories:
