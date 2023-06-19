@@ -1675,6 +1675,148 @@ switched
 ---
 
 
+
+<details>
+<summary>7장</summary>
+<div markdown="1">       
+
+### 무선  
+```
+wireless: 선을 없이 통신
+mobility: 같은장소에서 하지 않더라도 이동하더라도 통신이 됨.
+wirless가 더 큰개념
+```
+
+**무선 네트워크 요소**
+- wireless hosts
+- base station(기지국) : 네트워크와 연결된
+- wireless link : 기지국과 호스트 사이에 MAC 프로토콜이 필요
+
+infrastructure : 기지국 없이
+no infrastructure : 기지국 있이
+
+single hop : 호스트에 바로연결
+multiple hops : 건너 건너 까지 연결, 서로서로 통신하면서 기지국이 역할이 되기도 함
+
+
+**무선 링크 특징**
+- 거리에 따라 시그널 강도가 약해짐.
+- 주파수 대역이 다르므로 무선 신호 간섭이 심함
+- 방해물이 있으면 반사가 되어 늦게오기도 함
+- 신호 대비 잡음 비율(SNR): 잡음이 심하면 속도를 줄이거나 높임
+
+
+**SNR vs BER**
+```
+(에러에 대한 비트의 비율) → 반비례
+강도가 약해질수록 에러 발생 비율도 높아진다 → 잡음이 심해져서
+30을 보냈을떄는 에러가 많이 없음
+떨어지면 에러가 많아짐 → 속도를 천천히
+```
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/fcc64932-a0c4-40e8-a005-38bc4fb1fc7a)
+
+
+CSMA, CSMA/CD in Wireless
+CSMA : 감지를 하는것
+CSMA/CD : 충돌이 일어나면 스탑을 하는것
+
+> 둘다 감지를 해야만하는데 감지를 못한다면?
+
+1. A,C 장애물
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/3916c9aa-c14d-48c1-99fa-23a70fd01169)
+
+2. 감지가 약해서 안보낸것처럼 생각함
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/04282dce-9851-4e2c-9a98-8b462449ac15)
+
+---
+
+### Cellular(Cell)
+- Cell을 구성하는데 많은 비용이 필요(장비, 토지, 임대료,관리 유지비)
+- 도시는 조밀하게, 시골은 느슨하게
+- 4각형,원구조보다 < 육각형 구조가 효율적
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/c3b695be-2f99-440e-aa70-3bb4925b978e)
+
+```
+mobile switching center은 유선
+1. BTS (기지국)
+2. BCS (제어국)
+3. MSC (교환기)
+```
+
+
+</div>
+</details>
+
+---
+
+
+<details>
+<summary>8장</summary>
+<div markdown="1">       
+
+### 용어정리
+
+- cryptography
+- authentication
+- message integrity
+- firewalls 와 intrusion detection systems 차이
+- 보안의 application, transport, network, link layers
+
+**보안의 4대요소**
+1. 기밀성
+2. 사용자 인증
+3. 일관성/무결성
+4. 가용성
+
+
+**네트워크 공격유형**
+스니핑(sniffing) : 해커가 데이터를 몰래 도청
+스푸핑(Spoofing) : 네트워크 패킷을 변조하는 공격
+세션 하이재킹 : 이미 인증을 받아 세션을 유지하고 있는 연결 상태를 빼앗는 공격
+DDoS : DoS 서버에 무의미한 데이터를 무작정 보내 서버를 다운시키는 행위
+
+
+### Firewall
+헤드정보만 읽어서 통과 여부를 판단함 ex) 가방만 검사
+
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/a9eddc17-c371-4160-83de-f8559bc8f490)
+
+**방화벽**
+```
+🔎 네트워크에서 보안을 높이는 가장 1차적인 방법
+네트워크 사이를 지나가는 패킷을 정해 놓은 규칙에 의해 차단하거나 보내주는 기능을 가진 장치
+Protocol type, 헤더 정보, 주소, 포터 번호를 체크
+```
+
+**IDS/IPS**
+- 방화벽 뒤에 서버 네트워크 내에서 작동
+- 패킷의 내부 정보까지 검토 
+- ex) 가방안까지 검사
+
+
+IDS : 침입한 패킷의 로그 정보만 저장
+intrusion detection system
+내부 데이터를 검사하고 감지하고 로그만 남김
+
+IPS : 불법 패킷을 아예 차단함
+Intrusion Protection System
+잘못된 패킷을 발견한 후에 차단
+기존의 잘못된 형태를 계속 기억함
+
+**Firewall의 3가지 방식**
+1. stateless packet filters
+2. stateful packet filters
+3. application gateways
+
+
+
+</div>
+</details>
+
+
+
+---
+
 <details>
 <summary>과제 1</summary>
 <div markdown="1">       
@@ -1880,3 +2022,4 @@ IPC란, 프로세스들끼리 서로 데이터를 주고 받는 행위 또는 �
 
 </div>
 </details>
+
