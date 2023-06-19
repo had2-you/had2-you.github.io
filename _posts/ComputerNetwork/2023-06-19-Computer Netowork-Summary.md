@@ -245,6 +245,8 @@ Conditional GET : 프록시 서버와 오리지널 서버 사이에서 문서가
 <summary>3장</summary>
 <div markdown="1">       
 
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/6d41d902-85fb-46dc-857e-cdc20ea5812f)
+
 ### 전송 계층의 서비스와 역할
 
 > 프로세스 간 통신: 전송 계층은 송신 프로세스와 수신 프로세스 간의 통신을 담당한다. 이를 위해 포트 번호를 사용하여 프로세스를 식별하고, 데이터를 전송한다.
@@ -253,6 +255,10 @@ Conditional GET : 프록시 서버와 오리지널 서버 사이에서 문서가
 > 
 > 흐름 제어: 전송 계층은 수신 측의 버퍼 오버플로우를 방지하기 위해 데이터의 흐름을 조절한다. 수신 측의 처리 속도에 맞춰 송신 측이 데이터를 전송할 수 있도록 합니다.
 
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/4f511b98-75e6-4484-8341-4dab5a3810cd)
+
+
+---
 
 
 ### TCP의 특징
@@ -274,6 +280,10 @@ Conditional GET : 프록시 서버와 오리지널 서버 사이에서 문서가
 점대점(Point to Point) : 각 연결이 정확히 2개의 종단점을 가지고 있다.
 ```
 
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/de22d927-f651-45e4-ba31-764d9c827cac)
+
+
+
 ### UDP의 특징
 ```
 1. 비연결형 서비스로 데이터그램 방식을 제공한다.
@@ -290,32 +300,36 @@ TCP의 3-way handshaking과 같은 과정 X
 5. 1:1 , 1:N,N:N 통신이 가능하다.
 ```
 
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/69cb2192-3453-40ef-af14-93f8e15b2a14)
 
 
 
 UDP는 신뢰성 낮은 통신 프로토콜이므로 TCP보다 더 단순하다.
-서버는 하나의 소켓만으로 통신한다. 
-하나의 서버 소켓만 있으면 모든 클라이언트와 자유롭게 통신 가능
+- 서버는 하나의 소켓만으로 통신한다. 
+- 하나의 서버 소켓만 있으면 모든 클라이언트와 자유롭게 통신 가능
 
 
-dst IP, dst port로 데이터를 전송할 소켓을 구분한다. 
-역다중화(demultiplexing) 중에 서버의 IP와 port가 같으면 동일한 서버 소켓으로 전송된다.
+- dst IP, dst port로 데이터를 전송할 소켓을 구분한다. 
+- 역다중화(demultiplexing) 중에 서버의 IP와 port가 같으면 동일한 서버 소켓으로 전송된다.
 
 
 TCP는 보다 높은 신뢰성 보장을 위해 UDP보다 복잡하다.
-UDP와 달리, 하나의 클라이언트 소켓에 하나의 서버 소켓이 매핑된다. 
-ex) 네이버, 티스토리 등의 웹 페이지에 사용자 하나가 접속하면 그 사람을 위한 소켓 하나를 생성한다.
+- UDP와 달리, 하나의 클라이언트 소켓에 하나의 서버 소켓이 매핑된다. 
+  ex) 네이버, 티스토리 등의 웹 페이지에 사용자 하나가 접속하면 그 사람을 위한 소켓 하나를 생성한다.
+- 클라이언트 수만큼 소켓이 필요하므로 TCP는 UDP보다 네트워크 자원 소비가 큼
 
-클라이언트 수만큼 소켓이 필요하므로 TCP는 UDP보다 네트워크 자원 소비가 큼
+
+- 클라이언트가 서버를 찾기 위해 src IP/src Port, dst IP/dst Port를 사용한다. 
+- 역다중화(demultiplexing) 중에 이 중 하나라도 다를 경우 다른 서버 소켓에 전송된다.
+- UDP와 달리, dst IP, dst Port가 같아도 src IP, src Port가 다르면 서버의 다른 소켓으로 데이터가 전송됨 
 
 
-클라이언트가 서버를 찾기 위해 src IP/src Port, dst IP/dst Port를 사용한다. 
-역다중화(demultiplexing) 중에 이 중 하나라도 다를 경우 다른 서버 소켓에 전송된다.
-UDP와 달리, dst IP, dst Port가 같아도 src IP, src Port가 다르면 서버의 다른 소켓으로 데이터가 전송됨 
+---
 
 
 ### 다중화란?
 전송(Transport) 계층에서 다중화(Multiplexing)란 애플리케이션(Application) 계층의 여러 개의 소켓에서 전송되는 데이터를 모아 하나로 모으는 것이다. 이렇게 모아진 메시지 데이터를 세그먼트(Segment)라 한다.
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/438331e6-e6d4-472a-8f1d-aa9cbc012d4a)
 
 ```
 여러 개의 소켓에서 전송된 데이터를 다중화하면 세그먼트(Segment)가 된다.
@@ -333,38 +347,46 @@ UDP와 달리, dst IP, dst Port가 같아도 src IP, src Port가 다르면 서�
 데이터가 원하는 곳에 전달되고, 정상적으로 전달될 수 있도록 데이터를 포함하고 있다.
 ```
 
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/16fe11be-b8fb-4e5c-bd65-4c358677868f)
+
+
+
 ### 역다중화란?
 ```
 🔎 전송을 위해 여러 개를 하나로 묶는 것(Multiplexing)이 있다면, 전송이 되었을 때 이를 적절한 소켓에 전달해주는 것도 필요할 것이다.
    이를 역다중화(Demultiplexing)라 한다.
 역다중화(demultiplexing)는 전송받은 세그먼트의 데이터를 적절한 소켓에 전달해주는 것이다.
-```
 mutliplexing이 여러 개를 하나로 묶어주고, demultiplexing은 반대로 하나의 데이터를 적절하게 분배해주는 역할을 한다.
-헤더(header): 전송 측의 포트(source port number), 목표 포트(dest port number), 기타(other header fields)
-데이터 : 메시지(application data, message)
-포트 번호 :
-데이터가 상대에게 도달하면 전달받는 측(receiver)은 이를 역다중화(demultiplexing)하여 데이터를 적절한 소켓에 전달한다.
-여기서 전달해야 할 소켓을 고르기 위해 포트 번호를 통해 구분한다.
-전달하는 쪽의 포트 번호를 source port, 전달받는 쪽의 포트 번호를 dest port로 하여 헤더에 저장한다.
+```
 
+- 헤더(header): 전송 측의 포트(source port number), 목표 포트(dest port number), 기타(other header fields)
+- 데이터 : 메시지(application data, message)
+- 포트 번호 :
+  데이터가 상대에게 도달하면 전달받는 측(receiver)은 이를 역다중화(demultiplexing)하여 데이터를 적절한 소켓에 전달한다.
+  여기서 전달해야 할 소켓을 고르기 위해 포트 번호를 통해 구분한다.
+  전달하는 쪽의 포트 번호를 source port, 전달받는 쪽의 포트 번호를 dest port로 하여 헤더에 저장한다.
+
+![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/f4e4a94c-480e-4017-aa40-af9e0c7578b2)
 
 - header 필드의 수: 4개 → 단순한 구조로 되어 있다.
-source port 번호: 0~65535 (16 bits이므로 2^16 = 65536)
-destination port 번호: 이를 통해 역다중화(demultiplexing)을 함
-길이(length) : UDP 세그먼트의 전체 바이트 길이. 본문(message)의 길이와 헤더(header)의 길이를 모두 포함한다.
-체크섬(checksum) : 전송 도중에 데이터에 에러가 있는지 아닌지를 판단하기 위한 용도 
+- source port 번호: 0~65535 (16 bits이므로 2^16 = 65536)
+- destination port 번호: 이를 통해 역다중화(demultiplexing)을 함
+- 길이(length) : UDP 세그먼트의 전체 바이트 길이. 본문(message)의 길이와 헤더(header)의 길이를 모두 포함한다.
+- 체크섬(checksum) : 전송 도중에 데이터에 에러가 있는지 아닌지를 판단하기 위한 용도 
+- checksum에 문제가 발생하면 에러가 발생했음을 확인하고 메세지를 버리게 된다.
+- 이를 통해 udp는 mutliplexing/demutliplexing, 에러 체크 작업을 해주게 된다.
 
-checksum에 문제가 발생하면 에러가 발생했음을 확인하고 메세지를 버리게 된다.
-이를 통해 udp는 mutliplexing/demutliplexing, 에러 체크 작업을 해주게 된다.
 
-
+---
  
 
 RDT(Reliable data transfer) 프로토콜은 TCP에서의 신뢰성을 보장해준다.
 
+
 1. RDT 1.0: 완벽하게 데이터가 전송되었을 때
 하위 계층이 신뢰성 높고(reliable) 완벽하게 데이터를 전송할 때이다.
 그렇게 되면 전송(transport) 계층에서 데이터의 신뢰성을 준수할 필요가 없다. 데이터는 하위 계층을 거쳐 전송되므로, 이미 데이터의 신뢰성이 보장되는 셈이다.
+
 
 2. RDT 2.0: 패킷 에러만 발생할 때
 패킷 유실 없이 패킷 에러만 있는 채널을 타고 데이터가 전송될 때이다.
@@ -376,31 +398,26 @@ RDT(Reliable data transfer) 프로토콜은 TCP에서의 신뢰성을 보장해�
 **피드백(Feedback)**
 - receiver는 데이터를 잘 받았는지 확인하기 위해, 패킷을 받을 때마다 피드백을 주어야 한다.
 - 잘 받았다면 ACKs(Acknowledgements), 에러가 발생하면 NAKs(Negative ACKs)을 전송
-  
-예를 들면, 친구랑 대화할 때 "어, 응"이라고 말하다가, 잘못 들을 경우 "어? 뭐라고?" 등으로 답한다. 이것과 똑같은 원리.
+- 예를 들면, 친구랑 대화할 때 "어, 응"이라고 말하다가, 잘못 들을 경우 "어? 뭐라고?" 등으로 답한다. 이것과 똑같은 원리.
 
 
 **재전송(Retransmission)**
-패킷에 오류가 있으면 다시 전송해준다.
-sender가 NAK을 받게 되면 재전송한다.
-
-반대로 ACK를 받게 되면 sender는 제대로 전달되었다고 확인하고, 다음 패킷을 전송한다.
+- 패킷에 오류가 있으면 다시 전송해준다.
+- sender가 NAK을 받게 되면 재전송한다.
+- 반대로 ACK를 받게 되면 sender는 제대로 전달되었다고 확인하고, 다음 패킷을 전송한다.
 
 
 3. RDT 2.1
-
-Sender가 패킷마다 시퀀스 번호(Sequence number)를 붙인다.
-피드백(ACK/NAK) 메시지에 오류가 있는지 확인하고, 오류가 있으면 Sender는 현재 패킷을 재전송한다.
-Receiver는 복제된 패킷(Duplicate packet)을 버린다.
-이외에는 RDT 2.0과 동일
+- Sender가 패킷마다 시퀀스 번호(Sequence number)를 붙인다.
+- 피드백(ACK/NAK) 메시지에 오류가 있는지 확인하고, 오류가 있으면 Sender는 현재 패킷을 재전송한다.
+- Receiver는 복제된 패킷(Duplicate packet)을 버린다.
+- 이외에는 RDT 2.0과 동일
 
 **여기서 시퀀스 넘버는 몇 개까지 셀 수 있어야 할까?**
-
-무한히 많은 수를 셀 수 있다면 좋겠지만 패킷의 헤더는 한계가 있다.
-보내는 메시지의 길이가 커질수록 비용도 커지게 된다.
-이전에 보낸 것과 같은지 아닌지만 구분할 수 있으면 된다. (복제 패킷을 확인하는 용도)
-
-따라서 1비트(0, 1)만으로 표현할 수 있다.
+- 무한히 많은 수를 셀 수 있다면 좋겠지만 패킷의 헤더는 한계가 있다.
+- 보내는 메시지의 길이가 커질수록 비용도 커지게 된다.
+- 이전에 보낸 것과 같은지 아닌지만 구분할 수 있으면 된다. (복제 패킷을 확인하는 용도)
+- 따라서 1비트(0, 1)만으로 표현할 수 있다.
 
 
 4. RDT 2.2
@@ -422,14 +439,14 @@ RDT 2.1에서 무조건 Receiver가 ACK를 보내도록 하는 것이다.
 신뢰성 낮은 채널(Unreliable channel)에서는 두 가지 현상이 발생함 
 ```
 - 패킷 에러(Packet error)
-    패킷 유실(Packet loss)
-    패킷 에러(Packet error)에 대한 대응책 
+- 패킷 유실(Packet loss)
+- 패킷 에러(Packet error)에 대한 대응책 
 - 에러 감지(error detection), 피드백(feedback), 재전송(retransmission), 시퀀스 넘버(sequence number)
-    패킷 유실(Packet loss)을 위한 대응책 
-    타임 아웃(Timeout)
+- 패킷 유실(Packet loss)을 위한 대응책 
+- 타임 아웃(Timeout)
 ```
 
-파이프라인 프로토콜(Pipelined protocol)
+**파이프라인 프로토콜(Pipelined protocol)**
 ![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/aa1b4f3e-bcc2-4f50-9a7f-7cb299e14d29)
 
 한 번에 많은 메시지를 보내고 한 번에 응답을 받는 것이 당연히 더 효율적이다.
@@ -443,160 +460,137 @@ Go-Back-N
 ![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/361c7115-7829-4289-81ed-c9ad7a66364f)
 
 imeout시 을 재전송한다.
-윈도우 내의 모든 패킷
+윈도우 내의 **모든 패킷**
 
-timeout이 발생하면, 윈도우 사이즈(window size)가 N일 때 전송할 대상도 N만큼 다시 돌아오게 된다.
-
-윈도우에 들어 있는 데이터는 버퍼(buffer)에 저장하고 있어야 한다.
-
-윈도우 밖(0, 1): ACK가 왔으므로 전송이 완료됨 → 버퍼에 저장하지 않음
-윈도우 내(2, 3, 4, 5): ACK가 오지 않아 제대로 전송되었는지 알 수 없다. → 버퍼에 저장해야 한다.
+- timeout이 발생하면, 윈도우 사이즈(window size)가 N일 때 전송할 대상도 N만큼 다시 돌아오게 된다.
+- 윈도우에 들어 있는 데이터는 버퍼(buffer)에 저장하고 있어야 한다.
+- 윈도우 밖(0, 1): ACK가 왔으므로 전송이 완료됨 → 버퍼에 저장하지 않음
+- 윈도우 내(2, 3, 4, 5): ACK가 오지 않아 제대로 전송되었는지 알 수 없다. → 버퍼에 저장해야 한다.
 
 
-Go-Back-N의 문제점
+**Go-Back-N의 문제점**
 Go-Back-N의 문제점은 정상 전송된 패킷이 버려지고 재전송된다는 점이다.
 실제로는 윈도우 사이즈가 4 정도로 작지 않다.
 원래라면 실패할 경우 그 패킷만 재전송하면 된다.
-
 그러나 Go-Back-N에 따르면 한 패킷만 전송에 실패해도 윈도우 내에 있는 모든 패킷을 재전송해야 한다.
 
 
-Selective Repeat
+**Selective Repeat**
 Selective Repeat는 패킷이 유실되어 재전송할 때 선별적으로 패킷을 재전송한다.
 Go-Back-N처럼 ACK를 누적(cumulative) 방식으로 보내게 되면 어디까지 패킷이 전송되었는지 알 수 없다.
+
 
 따라서 Selective Repeat에서는 패킷을 받을 때마다 각각 ACK를 전송시켜준다.
 예를 들어 7번 패킷을 받으면 ACK 7을 보내는데, 여기서 ACK 7은 7번까지 모두 받았다는 것이 아니라 7번 패킷을 받았다는 뜻이다.
 ACK 7을 받게 되면 7번 패킷을 윈도우에서 해제해준다.
 
+
 그러나 패킷이 순서대로 정렬되어야 하므로 패킷이 유실되었을 때, 그 패킷이 도착할 때까지 다음 순서의 패킷을 임시로 저장해 줄 필요가 있다.
 
-따라서 2번 패킷을 받지 못하고 3, 4번 패킷을 받았을 때 이를 recv 버퍼에 저장해주게 된다.
 
+따라서 2번 패킷을 받지 못하고 3, 4번 패킷을 받았을 때 이를 recv 버퍼에 저장해주게 된다.
 
 
  
 ---
 
 
+
 ### TCP Overview
 
-point-to-point
-한 프로세스에는 무조건 한 프로세스가 매핑된다.
+- **point-to-point**
+  - 한 프로세스에는 무조건 한 프로세스가 매핑된다.
+  - sender 하나에 receiver 하나가 연결된다.
 
-sender 하나에 receiver 하나가 연결된다.
 
-TCP는 을 책임진다.
-소켓 한 쌍의 통신
+- **reliable, in-order byte**
+  - 신뢰성이 보장되므로 데이터가 유실되거나 데이터에 에러가 발생하지 않는다.
+  - 전송하면 데이터가  전송된다. 순서대로
 
-reliable, in-order byte
+- **pipelined**
+  - 파이프라인 방법을 사용하여, 한 번에 데이터를 쏟아붓는다
+  - ACK가 돌아올 때까지 기다리지 않고 다음 데이터를 전송한다.
 
-신뢰성이 보장되므로 데이터가 유실되거나 데이터에 에러가 발생하지 않는다.
+- **full duplex data**
+  - 같은 연결에서  데이터가 전송된다.
+  - 서버, 클라이언트 모두 서로에게 데이터를 전송할 수 있다. 즉, 모든 서버와 클라이언트는 이다.
+  sender이자 receiver
 
-전송하면 데이터가  전송된다.
-순서대로
+- **sender, receiver buffer**
+  - sender는 전송해야 할 데이터를 저장하기 위해 버퍼(buffer)를 사용한다.
+  - receiver는 순서가 뒤바뀐 바이트를 바이트를 받기 위해 버퍼를 사용한다.
+  - 모두 sender이자 receiver이므로 모든 디바이스는 와 를 갖는다.
+    sender 버퍼
+    receiver 버퍼
 
-pipelined
+- **flow controlled**
+  - sender는 receiver가 만 패킷을 전송할 수 있다.
 
-파이프라인 방법을 사용하여, .
-한 번에 데이터를 쏟아붓는다
-
-ACK가 돌아올 때까지 기다리지 않고 다음 데이터를 전송한다.
-
-full duplex data
-
-같은 연결에서  데이터가 전송된다.
-양방향으로
-
-서버, 클라이언트 모두 서로에게 데이터를 전송할 수 있다. 즉, 모든 서버와 클라이언트는 이다.
-sender이자 receiver
-
-sender, receiver buffer
-
-sender는 전송해야 할 데이터를 저장하기 위해 버퍼(buffer)를 사용한다.
-
-receiver는 순서가 뒤바뀐 바이트를 바이트를 받기 위해 버퍼를 사용한다.
-
-모두 sender이자 receiver이므로 모든 디바이스는 와 를 갖는다.
-sender 버퍼
-receiver 버퍼
-
-flow controlled
-
-sender는 receiver가 만 패킷을 전송할 수 있다.
-받을 수 있는 만큼
 
 ![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/36737e7d-a37b-4cc4-be6b-f08d4f544632)
 
 
 
-포트 번호TCP는 다중화(mutliplexing)와 역다중화(demultiplexing) 과정을 위해 출발지와 도착지의 포트 번호를 요구한다. 포트 번호는 각각 16비트씩 할당되어 총 32비트로 구성된다.
+- **포트 번호TCP**는 다중화(mutliplexing)와 역다중화(demultiplexing) 과정을 위해 출발지와 도착지의 포트 번호를 요구한다. 포트 번호는 각각 16비트씩 할당되어 총 32비트로 구성된다.
 
-시퀀스 번호(sequence number)는 세그먼트 데이터의 의 바이트 스트림 번호(byte stream number)를 나타낸다. 100바이트를 전송할 때 첫 메시지(세그먼트)는 0~9번 바이트, 두 번째 메시지는 10~29번 바이트까지 보낸다고 하자. 그러면 첫 메시지의 seq #(시퀀스 넘버) = 0이고, 두 번째 메시지의 seq # = 10이 된다.
+- 시퀀스 번호(sequence number)는 세그먼트 데이터의 의 바이트 스트림 번호(byte stream number)를 나타낸다. 100바이트를 전송할 때 첫 메시지(세그먼트)는 0~9번 바이트, 두 번째 메시지는 10~29번 바이트까지 보낸다고 하자. 그러면 첫 메시지의 seq #(시퀀스 넘버) = 0이고, 두 번째 메시지의 seq # = 10이 된다.
 첫 바이트
 
-acknowledgement numberacknowledgement number는 ACK 번호를 가리킨다. 주의할 점은, TCP에서의 ACK는 이다. 지난 포스팅에서 Go-Back-N에서는 ACK 10이 '10번 세그먼트까지 받았음'을 의미하지만, TCP는 '9번 세그먼트까지 받았고 10번을 받을 차례'를 의미한다. Go-Back-N과 동일하게 ACK가 누적(cumulative)한 방식이지만 그 번호가 갖는 의미가 약간 다른 셈이다.
+- acknowledgement numberacknowledgement number는 ACK 번호를 가리킨다. 주의할 점은, TCP에서의 ACK는 이다. 지난 포스팅에서 Go-Back-N에서는 ACK 10이 '10번 세그먼트까지 받았음'을 의미하지만, TCP는 '9번 세그먼트까지 받았고 10번을 받을 차례'를 의미한다. Go-Back-N과 동일하게 ACK가 누적(cumulative)한 방식이지만 그 번호가 갖는 의미가 약간 다른 셈이다.
 '다음번에 받을 바이트의 seq #'
 
-checksum체크섬은 에러를 발견하기 위해 사용한다.
+- checksum 체크섬은 에러를 발견하기 위해 사용한다.
 
-Receive windowreceive window는 현재 receiver가 수신할 수 있는 바이트의 수를 말한다. receive 버퍼에 남은 공간이 얼마나 되는지를 가리킨다.
+- Receive windowreceive window는 현재 receiver가 수신할 수 있는 바이트의 수를 말한다. receive 버퍼에 남은 공간이 얼마나 되는지를 가리킨다.
 
 
-Reliable data transfer
+**Reliable data transfer**
 
 TCP에서 보장하는 rdt(Reliable data transfer) 서비스는 기존 rdt와 비교하여 세 가지 차이점이 있다.
 
-파이프라인 방식으로 세그먼트를 전송
-
-누적 확인 응답(Cumulative acks)
-
-TCP는 재전송을 위해 를 사용함
-단일 타이머
+  1. 파이프라인 방식으로 세그먼트를 전송
+  2. 누적 확인 응답(Cumulative acks)
+  3. TCP는 재전송을 위해 단일타이머를 사용함
 
 또한 TCP는 Go-Back-N과 달리, timeout이 발생하면 해당 세그먼트만 전송하게 된다.
 
 
 
+---
+
  
 
-
-흐름제어
+**흐름제어**
 
 만약 수신 측의 recv 버퍼가 꽉 찼을 경우 송신하는 측에서는 데이터를 전송하지 않는다. 이렇게 전송자가 너무 많이, 빨리 전송하여 수신자의 버퍼가 넘치는 일이 없도록 하는 것을 흐름 제어(Flow control)이라 한다.
 
----
 
 ### TCP 3-Way Handshake
 ![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/a9759f9a-5e9c-493d-b39d-0392ff40e486)
 
 TCP 연결 과정(3-way handshake)
-TCP에서는 클라이언트와 서버 간에 연결을 구축하기 위해 3-way handshake 방법을 사용한다.
 
+
+TCP에서는 클라이언트와 서버 간에 연결을 구축하기 위해 3-way handshake 방법을 사용한다.
 3-way handshake는 이름 그대로 세 번 '악수'하는 과정으로 연결을 구축한다.
 그 세 과정은 다음과 같다.
-
+```
 SYN: 클라이언트가 서버에 연결을 요청
-클라이언트의 Seq #를 서버에 알려준다.
+- 클라이언트의 Seq #를 서버에 알려준다.
+- SYN 메시지를 보낸다는 것은 TCP 커넥션을 열기를 요청하는 것이다.
+- TCP Header에 있는 를 통해 올릴 수 있다.
+```
 
-SYN 메시지를 보낸다는 것은 TCP 커넥션을 열기를 요청하는 것이다.
-TCP Header에 있는 를 통해 올릴 수 있다.
-
-syn 신호
 SYN/ACK: 서버가 클라이언트에게서 SYN을 받고 SYNACK 세그먼트를 전송
+- 서버의 Seq #를 클라이언트에 알려준다.
+- 이 과정에서 서버가 버퍼를 만든다.
+- TCP Header에 있는 와 syn 신호, ack 신호를 이용한다.
 
-서버의 Seq #를 클라이언트에 알려준다.
-이 과정에서 서버가 버퍼를 만든다.
-
-TCP Header에 있는 와 를 이용한다.
-syn 신호
-ack 신호
 ACK: 클라이언트가 SYNACK를 받고 서버에 ACK를 보내줌
-ACK 과정에서는 클라이언트가 서버에 실제 데이터를 담아 보낼 수 있다.
-
-왜 SYNACK 과정과 ACK 과정이 필요할까? 
-클라이언트는 두 번째 과정 SYNACK를 통해 제대로 메시지가 전송됨을 알 수 있다.
-그러나 서버는 ACK 과정이 없으면 메시지가 전송되긴 하지만 정상적으로 전송되었는지 알 수 없기 때문.
+- ACK 과정에서는 클라이언트가 서버에 실제 데이터를 담아 보낼 수 있다.
+- 왜 SYNACK 과정과 ACK 과정이 필요할까? 
+- 클라이언트는 두 번째 과정 SYNACK를 통해 제대로 메시지가 전송됨을 알 수 있다.
+- 그러나 서버는 ACK 과정이 없으면 메시지가 전송되긴 하지만 정상적으로 전송되었는지 알 수 없기 때문.
 
 
 TCP 연결 끊기(4-way Handshake)
@@ -604,22 +598,19 @@ TCP 연결 끊기(4-way Handshake)
 ![image](https://github.com/had2-you/had2-you.github.io/assets/72385538/f63cbc7a-98b9-4cc7-8ce5-40e95eddfc75)
 
 TCP 연결 종료 과정(4-way handshake)
-FIN: 클라이언트가 서버에게 FIN을 전송 
+- FIN: 클라이언트가 서버에게 FIN을 전송 
+  - 클라이언트 장치가 서버에게 FIN을 보내서 연결 종료를 알린다.
 
-클라이언트 장치가 서버에게 FIN을 보내서 연결 종료를 알린다.
+- ACK: 서버가 클라이언트에게 ACK를 전송 
+  - 클라이언트 to 서버 연결 종료 확인 과정
+  - 서버는 클라이언트의 연결 중단 요청을 확인하고 피드백으로 ACK를 보내어준다.
+- FIN: 서버가 클라이언트에게 FIN을 전송 
+  - 이번엔 반대로 서버의 연결 중단을 클라이언트에게 고지한다.
+  - 클라이언트가 FIN을 수신하면 잠시 동안 timed wait 상태가 되어 연결 종료를 통지받고도 한참 동안 종료되지 않는다.
 
-ACK: 서버가 클라이언트에게 ACK를 전송 
-클라이언트 to 서버 연결 종료 확인 과정
-서버는 클라이언트의 연결 중단 요청을 확인하고 피드백으로 ACK를 보내어준다.
-FIN: 서버가 클라이언트에게 FIN을 전송 
-
-이번엔 반대로 서버의 연결 중단을 클라이언트에게 고지한다.
-
-클라이언트가 FIN을 수신하면 잠시 동안 timed wait 상태가 되어 연결 종료를 통지받고도 한참 동안 종료되지 않는다.
-
-ACK: 클라이언트가 서버에게 ACK를 전송 
-서버 to 클라이언트 연결 종료 확인 과정
-서버가 ACK를 받고 나면 TCP 연결이 종료된다.
+- ACK: 클라이언트가 서버에게 ACK를 전송 
+  - 서버 to 클라이언트 연결 종료 확인 과정
+  - 서버가 ACK를 받고 나면 TCP 연결이 종료된다.
 
 ---
 
