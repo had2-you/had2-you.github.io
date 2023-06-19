@@ -7,8 +7,6 @@ hide_description: true
 
 # About Me
 
-<!--author-->
-
 ---
 
 <center>
