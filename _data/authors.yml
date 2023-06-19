@@ -8,6 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
+    iOS 관련 개발노트 및 여행 블로그 입니다.
 
   # This photo will be used in the about section
   picture:
