@@ -6,6 +6,10 @@ hide_description: true
 ---
 
 # About Me
+<p align="center">
+<img src="/assets/img/me.jpeg" width="20%" height="20%"/>
+</p>
+
 
 <center>
 <span style="font-size:170%; font-weight:bold">이해주 | Anne</span>
