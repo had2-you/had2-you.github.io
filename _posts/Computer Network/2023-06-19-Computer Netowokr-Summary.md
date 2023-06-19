@@ -1,12 +1,10 @@
 ---
-title: 'Computer Network Summary'
+title: 'Summary'
 layout: post
 categories: Computer Network
-tags: Computer Network
+tags: cs
 comments: true
 ---
-
-\*\*
 
 e-mail, ftp(하나의 서버에 여러 파일을 올려놓은 후 사용자들이 원할 때 꺼내쓰는 형태)는 요즘은 Web안에 흡수되어 있음
 
