@@ -1,7 +1,6 @@
 ---
 layout: list
-bigtitle: Traveling
-slug: Traveling
+bigtitle: Travel
 menu: true
 submenu: false
 order: 3
