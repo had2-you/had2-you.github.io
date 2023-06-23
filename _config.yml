@@ -51,9 +51,9 @@ menu:
   - title: Computer Network
     url: /computernetwork/
   - title: Traveling
-    url: /Travel/
+    url: /travel/
   - title: Swfit Study
-    url: /Swift-Study/
+    url: /swift-study/
     # submenu:
     #   - title:  Papers
     #     url:      /papers/
