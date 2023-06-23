@@ -52,6 +52,8 @@ menu:
     url: /computernetwork/
   - title: Traveling
     url: /Travel/
+  - title: Swfit Study
+    url: /Swift-Study/
     # submenu:
     #   - title:  Papers
     #     url:      /papers/

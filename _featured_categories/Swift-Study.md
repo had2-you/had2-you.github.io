@@ -4,7 +4,7 @@ bigtitle: Swift-Study
 slug: Swift-Study
 menu: true
 submenu: false
-order: 2
+order: 3
 description: >
-  What I learned about Swift
+  What I Learned about Swift
 ---
