@@ -6,10 +6,10 @@ hide_description: true
 ---
 
 # About Me
+
 <p align="center">
 <img src="/assets/img/me.jpeg" width="20%" height="20%"/>
 </p>
-
 
 <center>
 <span style="font-size:170%; font-weight:bold">이해주 | Anne</span>
@@ -54,12 +54,13 @@ hide_description: true
 
 ---
 
-**Dr.bot**
+#### [Dr.bot](https://github.com/had2-you/Dr.bot)
 
 - chatGPT 오픈소스를 활용한 의료용 챗봇 프로젝트 수행
 
-<br><br>
-**구제 쇼핑몰 OP Shop**
+<br>
+
+#### [구제 쇼핑몰 OPShop](https://github.com/had2-you/opshop)
 
 - 동묘 등 전국 각지의 구제시장들을 위한 의류 통합 플랫폼
 
