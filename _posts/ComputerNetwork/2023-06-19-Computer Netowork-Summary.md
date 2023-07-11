@@ -1,5 +1,5 @@
 ---
-title: 'Summary of Coputer Network'
+title: 'Summary of Computer Network'
 layout: post
 categories:
   - ComputerNetwork
