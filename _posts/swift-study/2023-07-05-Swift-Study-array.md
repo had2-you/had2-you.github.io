@@ -55,26 +55,45 @@ arrSub.reduce(0, +)은 현재 배열에 있는 값을 전부 더하라는 의미
 
 ## 추가로 궁금했던 것
 
-#### <span style="color:red">고차함수 :: reduce</span>
+#### <span style="color:red">reduce?</span> Returns the result of combining the elements of the sequence using the given closure.
 
 <br>
 
-⭐️ readLine()으로 값을 불러올 때 왜 **guard let**을 사용해야해?
+```swift
+func reduce<Result>(
+    _ initialResult: Result,
+    _ nextPartialResult: (Result, Self.Element) throws -> Result
+) rethrows -> Result
+```
 
-    readLine()함수의 반환 타입은 '옵셔널 String'으로 반환한다.
-    즉, guard let과 같은 방식을 통해 옵셔널을 벗겨주어야 한다.
+initialResult : 초기값으로 사용될 값을 넣으면 클로저가 처음 실행될 때, nextPartialResult에 전달 <br>
+nextPartialResult : 시퀀스의 각 요소들을 계산해 누적된 값 <br>
+Return Value : 마지막에 누적된 값, 시퀀스에 요소가 없다면 initialResult 값을 반환 <br>
 
 <br>
 
-⭐️ 그렇다면 왜 readLine()함수는 **옵셔널 String**으로 반환해?
+Expression(1)
 
-    사용자가 값을 입력하지 않을 수도 있기 때문이다.
-    따라서 입력의 유무를 확인하고, 입력값이 있을 경우에만 올바른 처리를 하는 것을 목표로 한다.
+```swift
+// 각 요소의 합 구하기
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let sum = numbers.reduce(0, +)
+
+print(sum)
+// 55
+```
 
 <br>
 
-⭐️ split() vs compnents() 차이점?
+Expression(2)
 
-    split은 swifts stndard library에 포함되어 있고
-    compnents는 Foundation 프레임워크에 포함되어 있다.
-    → import Foundation을 꼭 해줘야 한다는 의미
+```swift
+// 각 요소의 합 구하기
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let sum = numbers.reduce(0) { $0 + $1 }
+
+print(sum)
+// 55
+```
