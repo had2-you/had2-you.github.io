@@ -52,20 +52,20 @@ http://www.tipue.com/search
 }
 .tipue_search_icon
 {
-     width: 10px;
-     height: 10px;
+     width: 19px;
+     height: 19px;
      margin-bottom: 1rem;
 }
 .tipue_search_left
 {
      float: left;
-     padding: 0px 0px 0 0;
+     padding: 10px 5px 0 0;
      color: #170247;
-     max-height: 10px;
+     max-height: 20px;
 }
 .tipue_search_right
 {
-     float: right;
+     float: left;
 }
 
 
