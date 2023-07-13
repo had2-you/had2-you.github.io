@@ -8,7 +8,7 @@ tags:
 comments: true
 ---
 
-## 백준 1546번
+## 백준 10818번
 
 <img src="/assets/img/boj10818.png"/>
 
