@@ -10,7 +10,7 @@ comments: true
 
 ## Dictionary
 
-Type of Hashtable,
+Type of Hash table
 
 <br>
 
@@ -18,48 +18,120 @@ Type of Hashtable,
 //Declaration
 @frozen struct Dictionary<Key, Value> where Key : Hashable
 
-
 //Usege
 var responseMessages = [200: "OK",
                         403: "Access forbidden",
                         404: "File not found",
                         500: "Internal server error"]
+// [Int(Key type): String(Value Type)]
+
+
+//Empty Dictionary
+var emptyDict: [String: String] = [:]
+
 ```
+
+key-value pairs seperated with **a comma** <Br>
+**a colon** separates each key from its associated value<br>
+surrounded by **square brackets**. <br>
+
+<br>
+
+```Swift
+let httpResponseCodes = [200, 403, 301]
+for code in httpResponseCodes {
+    if let message = responseMessages[code] {
+        print("Response \(code): \(message)")
+    } else {
+        print("Unknown response \(code)")
+    }
+}
+// Prints "Response 200: OK"
+// Prints "Response 403: Access forbidden"
+// Prints "Unknown response 301"
+```
+
+**Bind the wrapped value of an Optional** which are guard let, if let so on, because It's subscripting
+
+<br>
+
+```swift
+responseMessages[404] = "Not found"
+responseMessages[500] = nil
+```
+
+You can modifiy, update, or remove keys and values.<br>
+If assign nil to an existing key, the key and its associated value **are removed.**(Didn't print it.) <br>
+
+<br>
+
+```swift
+let glyphIndex = imagePaths.firstIndex(where: { $0.value.hasPrefix("/glyphs") })
+if let index = glyphIndex {
+    print("The '\(imagePaths[index].key)' image is a glyph.")
+} else {
+    print("No glyphs found!")
+}
+// Prints "The 'star' image is a glyph.")
+
+print(imagePaths[glyphIndex!])
+// Prints "(key: "star", value: "/glyphs/star.png")"
+```
+
+You **can search a dictionary’s contents for a particular value** <br>
+using the <u>contains(where:) or firstIndex(where:)</u> methods supplied by default implementation. <br>
+
+The reason why I need a force unwrapping is its return type whichi is
+
+```Swift
+// Declaration
+func firstIndex(where predicate: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+```
+
+<br>
 
 ## 백준 1157번
 
-<img src="/assets/img/boj10818.png"/>
+<img src="/assets/img/boj1157.png"/>
 
 <br>
 
-#### 문제 요약 : 가장 많이 사용된 알파벳 대소문자 구분 없이 찾아서 <u>대문자</u>로 출력하기
+#### Problem Summary : Find the most frequently used alphabet case-insensitively and display it in <u>uppercase</u>.
 
 <br>
 
 ```swift
-var n = Int(readLine()!)! // 개수
-var arr = readLine()!.split(separator: " ").map { Int(String($0))! }
+import Foundation
 
-arr = arr.sorted()
-print(arr[0], arr[n-1])
+let word = readLine()!.uppercased()
+var dict: [String:Int] = [:]
+var result: [String] = []
+
+for i in word {
+    if dict[String(i)] == nil {
+        dict[String(i)] = 1
+    } else {
+        dict[String(i)]! += 1
+    }
+}
+
+// print(dict) → ["S": 4, "M": 1, "P": 1, "I": 4]
+
+for key in dict.keys {
+    if dict.values.max() == dict[key] {
+        result.append(key)
+    }
+}
+
+print(result.count > 1 ? "?":"\(result[0])")
 ```
 
-변수 n에는 **개수**를, arr에 n개의 값을 입력 받아 **Int형 배열**로 받았다.<br>
-이후 arr을 sorted() 즉, <u>오름차순</u>으로 정렬하여<br>
-
-#### 결과값으로 배열의 <u>첫번째</u>와 <u>마지막</u>을 출력하였다.
+⭐️ Difference between **dict.keys** and **dict[key]** in dictionary<br>
+**dict.keys** gives you a collection of all keys in the dictionary,<br>
+while **dict[key]** allows you to fetch the value associated with specific key.<br>
 
 <br>
-<hr>
 
-## 추가로 궁금했던 것
+## Reference <Br>
 
-#### sorted() 쓸 때 주의
-
-```swift
-arr = arr.sorted() → ⭕️
-arr.sroted() → ❌
-
-아랫줄의 코드를 실행하고자 할 경우 실행이 안됨.
-⭐️ 배열을 다시 변수에 집어 넣어주어야 함 ⭐️
-```
+https://developer.apple.com/documentation/swift/dictionary
