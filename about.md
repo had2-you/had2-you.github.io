@@ -30,7 +30,7 @@ I am ready to put in the effort and dedication to learn and grow alongside the c
 One of my hobbies and interests is traveling. ✈﹒﹒﹒🌏<br>
 I discovered my love for traveling when I took a gap year at the age of 20 and went to Canada on a working holiday. <br>
 Although I already enjoyed traveling before going on the working holiday, <br>
-my one-year experience in Canada became a turning point in my life and shaped **who I am** today. :)<br>
+my one-year experience in Canada became a turning point in my life and shaped <u>who I am</u> today. :)<br>
 <br>
 Since then, I gained the courage to travel alone and had the opportunity to meet people from different countries, <br>
 making friends and communicating in my second language, even if not fluently. <br>
@@ -138,10 +138,16 @@ Let's embark on this exciting journey together!<br>
   <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white">
   <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white">
 
-## Photo
+## CV/CV Letter
+
+##### [DOWNLOAD LINK](https://drive.google.com/drive/folders/17PYsihjnaAKk3qfKsXUZAU3atyrrjUsD?usp=drive_link)
 
 ---
 
+<img src = "/assets/img/CV.png">
+<img src = "/assets/img/CVLetter.png">
+
+<!--
 > Me
 
 <div class="me">
@@ -178,7 +184,7 @@ Let's embark on this exciting journey together!<br>
 <div class="friends">
     <div><img src= "/assets/img/me/fren0.jpeg"></div>
     <div><img src= "/assets/img/me/fren1.jpeg"></div>
-    <div><img src= "/assets/img/me/fren2.jpg"></div>
+    <div><img src= "/assets/img/me/fren2.JPG"></div>
 </div>
 
 <script type="text/javascript">
@@ -199,6 +205,6 @@ Let's embark on this exciting journey together!<br>
 			fade : false
 		});
 	});
-</script>
+</script> -->
 
 ---
