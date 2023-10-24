@@ -144,7 +144,7 @@ Let's embark on this exciting journey together!<br>
 
 ---
 
-<img src = "/assets/img/CV.png">
+<!-- <img src = "/assets/img/CV.png"> -->
 <img src = "/assets/img/CVLetter.png">
 
 <!--
