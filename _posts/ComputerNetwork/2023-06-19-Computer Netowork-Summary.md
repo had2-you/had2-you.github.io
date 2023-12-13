@@ -2,7 +2,7 @@
 title: 'Summary of Computer Network'
 layout: post
 categories:
-  - ComputerNetwork
+  - computernetwork
 tags:
   - cs
 comments: true
